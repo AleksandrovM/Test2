@@ -1,0 +1,65 @@
+﻿@model MvcApplicationT4.Models.Country
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ChModel</title>
+</head>
+<body>
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+    
+        <fieldset>
+            <legend>Country</legend>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.name)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.name)               
+                @Html.ValidationMessageFor(model => model.name)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.dsc)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.dsc)
+                @Html.ValidationMessageFor(model => model.dsc)                
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.dateBuild)
+            </div>
+            <div class="editor-field">
+                @Html.HiddenFor(model => model.dateBuild)
+                @*@Html.TextBoxFor(model => model.dateBuild, new { style = "background-color: red;" })*@
+                @Html.RadioButtonFor(model => model.selectedDate, 1999, @Model.dateBuild == 1999 ? new { @checked = "cheked"} : null) 1999
+                @Html.RadioButtonFor(model => model.selectedDate, 2000, @Model.dateBuild == 2000 ? new { @checked = "cheked" } : null) 2000
+                @Html.ValidationMessageFor(model => model.selectedDate)
+                @*@Html.EditorFor(model => model.dateBuild)
+                *@
+            </div>
+    
+            <p>
+                <input type="submit" value="Save" />
+            </p>
+        </fieldset>
+    }
+    
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+</body>
+</html>

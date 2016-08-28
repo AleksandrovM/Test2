@@ -1,0 +1,26 @@
+﻿@model IEnumerable< MvcApplicationT4.Models.Country>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Countries</title>
+</head>
+<body>
+    <div>
+        @foreach (var cnt in Model)
+        {   
+            <p>
+            Name: @cnt.name, Dsc: @cnt.dsc, Born: @cnt.dateBuild 
+            </p>
+        }
+        
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+﻿@model MvcApplicationT4.Models.Country
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ViewModel</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm())
+        {
+            @Html.EditorForModel(Model)
+            <p>
+                <input type="submit" value="Save" />
+            </p>
+        }
+
+        
+    </div>
+</body>
+
+</html>

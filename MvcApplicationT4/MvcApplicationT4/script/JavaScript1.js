@@ -1,0 +1,4 @@
+﻿function sssr()
+{
+    alert('hi')
+}

@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Index";
+    int counter = 0;
+}
+
+<h2>Index</h2>
+
+
+@foreach (string co in ViewBag.conts)
+{
+    <p>
+
+        @Html.ActionLink(@co, "Details", new { id = @counter }) @Html.ActionLink("Change", "ChModel", new { id = @counter }) @using (Html.BeginForm("Del", "Home", new { id = @counter }))       {            <input type="submit" value="Delete" />        }
+
+
+        @{counter++;}
+    </p>
+}
+
+@Html.ActionLink("Create", "CreModel");
+
+<br>
+<br>
+
+     <p> CustomVariable   @ViewBag.CustomVariable  </p>    
+ 

@@ -1,0 +1,63 @@
+﻿@model MvcApplicationT4.Models.Country
+
+@{
+    Layout = null;
+    string comment2 = "aaa";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CreModel</title>
+</head>
+<body>
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+    
+        <fieldset>
+            <legend>Country</legend>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.name)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.name)
+                @Html.ValidationMessageFor(model => model.name)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.dsc)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.dsc)
+                @Html.ValidationMessageFor(model => model.dsc)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.dateBuild)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.dateBuild)
+                @Html.ValidationMessageFor(model => model.dateBuild)
+            </div>
+
+          
+    
+            <p>
+                <input type="submit" value="Create" />
+            </p>
+        </fieldset>
+    }
+    
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+</body>
+</html>

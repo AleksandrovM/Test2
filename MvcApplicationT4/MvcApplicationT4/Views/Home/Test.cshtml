@@ -13,7 +13,14 @@
 <body>
     <div>
         <script>
-            sssr()
+            var a = sssr;
+            if (typeof (a) == "function") {
+                alert('f')
+            }
+            else
+            {
+                alert('not')
+            }
         </script>
         AAA
         bbb
